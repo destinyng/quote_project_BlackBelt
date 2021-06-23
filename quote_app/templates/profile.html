@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">{{user.first_name}} {{user.last_name}}'s Quotes </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto"></ul>
+                <span class="navbar-text">
+                    <a href="/quotes" role="button"
+                    class="btn btn-sm btn-info ml-2 text-white">Back</a>
+                        
+                    <a href="/logout" role="button"
+                    class="btn btn-sm btn-info ml-2 text-white">Logout</a>
+                        
+                        
+                </span>
+
+                
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-6 px-2">
+                <h3>Quotes</h3>
+                {% for quote in user_quotes %}
+                <div class="container">
+                    
+                    <p>{{quote.author}}: "{{quote.content}}"</p>
+                    
+
+                </div>
+                
+                {% endfor %}
+
+
+                
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+
+</html>
